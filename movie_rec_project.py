@@ -13,11 +13,8 @@ st.markdown("Enter a movie you like, and get similar movie recommendations!")
 # load in csv file
 @st.cache_data(show_spinner=True)
 def load_movies():
-    # Direct download link for Google Drive
     url = "https://drive.google.com/uc?export=download&id=1A3EQqLXSZHRGs1lkQwd7y5ZdH0jJvtw-"
-    output = "movies.csv"
-    gdown.download(url, output, quiet=False)
-    movies = pd.read_csv(output)
+    movies = pd.read_csv(url)
     movies = movies.drop_duplicates(subset=['title'], keep='first')
     movies['plot_synopsis'] = movies['plot_synopsis'].fillna('')
     movies['tags'] = movies['tags'].fillna('')
