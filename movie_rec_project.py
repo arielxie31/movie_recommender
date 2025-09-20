@@ -5,6 +5,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
 st.title("Movie Recommendations")
+st.subheader("Select a Movie and we'll give you 10 recs!")
+
 
 
 movies = pd.read_csv("movies.csv")
