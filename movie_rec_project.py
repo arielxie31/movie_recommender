@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import gdown
 url = "https://drive.google.com/uc?export=download&id=1A3EQqLXSZHRGs1lkQwd7y5ZdH0jJvtw-"
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel 
@@ -14,7 +15,9 @@ st.markdown("Enter a movie you like, and get similar movie recommendations!")
 def load_movies():
     # Direct download link for Google Drive
     url = "https://drive.google.com/uc?export=download&id=1A3EQqLXSZHRGs1lkQwd7y5ZdH0jJvtw-"
-    movies = pd.read_csv(url)
+    output = "movies.csv"
+    gdown.download(url, output, quiet=False)
+    movies = pd.read_csv(output)
     movies = movies.drop_duplicates(subset=['title'], keep='first')
     movies['plot_synopsis'] = movies['plot_synopsis'].fillna('')
     movies['tags'] = movies['tags'].fillna('')
