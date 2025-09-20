@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-url = https://drive.google.com/file/d/1A3EQqLXSZHRGs1lkQwd7y5ZdH0jJvtw-/view?usp=drive_link
+url = "https://drive.google.com/uc?export=download&id=1A3EQqLXSZHRGs1lkQwd7y5ZdH0jJvtw-"
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel 
 
