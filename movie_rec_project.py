@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
+url = https://drive.google.com/file/d/1A3EQqLXSZHRGs1lkQwd7y5ZdH0jJvtw-/view?usp=drive_link
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel 
 
 # ----- load data -----
 # load in csv file
-movies = pd.read_csv('mpst_full_data.csv')
+movies = pd.read_csv(url)
 
 # remove dupes
 movies = movies.drop_duplicates(subset=['title'], keep='first').reset_index(drop=True)
