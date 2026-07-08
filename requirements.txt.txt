@@ -1,4 +1,0 @@
---upgrade pip
-streamlit
-pandas
-scikit-learn==1.5.1
